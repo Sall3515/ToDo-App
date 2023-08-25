@@ -1,4 +1,4 @@
-# ToDo app for Bootcamp
+# ToDo app
 
 -Add tasks
 -Mark as completed

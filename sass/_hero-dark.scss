@@ -1,0 +1,50 @@
+body.dark-theme {
+    background-color: $Very-Dark-Blue;
+
+    header {
+        background-color: $Very-Dark-Blue;
+
+        nav {
+            a.app-name {
+                background: none;
+                -webkit-text-fill-color: $white-clr;
+            }
+        }
+
+        div {
+            background-color: $Very-Dark-Grayish-Blue;
+
+            &::before {
+                background-color: $switcher-circle-clr-dark;
+                transform: translateX(54px);
+            }
+        }
+
+        a {
+            color: white;
+        }
+
+    }
+
+    #hero {
+        background:
+            linear-gradient(rgba(40, 39, 39, 0.211), rgba(41, 40, 40, 0.156)),
+            url(/images/heroimg.jpg);
+    }
+
+    .section {
+        i {
+            background-image: $gradient;
+            opacity: 0.76;
+        }
+
+        p {
+            color: $white-clr;
+            opacity: 0.8;
+        }
+    }
+
+    footer {
+        background-color: $Very-Dark-Desaturated-Blue;
+    }
+}

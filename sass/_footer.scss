@@ -1,0 +1,36 @@
+footer {
+    background-color: rgba(91, 134, 172, 0.77);
+    height: 170px;
+    color: rgba(255, 255, 255, 0.804);
+    text-align: center;
+
+    p {
+        padding: 25px 0 0 0;
+        font-size: 16px;
+    }
+
+    div {
+        font-size: 14px;
+
+        padding: {
+            top: 30px;
+            bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(112, 91, 158);
+
+            &:hover {
+                color: rgb(242, 232, 138);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        padding: 30px 10px 0 10px;
+        min-height: 220px;
+    }
+}

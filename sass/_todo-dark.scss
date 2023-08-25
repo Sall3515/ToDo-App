@@ -1,0 +1,90 @@
+body.dark-theme {
+  #todo-list {
+    #body-item-1 {
+      background-image: url(../images/bg-desktop-dark.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      grid-row: 1/2;
+      width: 100%;
+    }
+
+    #body-item-2 {
+      width: 100%;
+      grid-row: 2/3;
+      background-color: $Very-Dark-Blue;
+    }
+
+    #content {
+      input {
+        background-color: $Very-Dark-Desaturated-Blue;
+        color: $Light-Grayish-Blue;
+        border: none;
+      }
+      #add {
+        background-color: $Very-Dark-Grayish-Blue;
+        font-size: 25px;
+        color: rgb(212, 195, 195);
+        &:hover {
+          background-color: rgba(42, 40, 40, 0.655);
+          cursor: pointer;
+        }
+      }
+
+      .check-box {
+        & + label {
+          &::after {
+            background: $Very-Dark-Desaturated-Blue;
+            border: 1px solid $Dark-Grayish-Blue;
+          }
+        }
+      }
+
+      .list {
+        .task {
+          background-color: $Very-Dark-Desaturated-Blue;
+          border-top: 2px solid$Very-Dark-Grayish-Blue;
+
+          div {
+            span {
+              color: $Light-Grayish-Blue;
+            }
+
+            .checked {
+              text-decoration: line-through;
+              color: $Dark-Grayish-Blue;
+            }
+
+            .list-checkbox {
+              & + label {
+                &::after {
+                  background: $Very-Dark-Desaturated-Blue;
+                  border: 1px solid $Dark-Grayish-Blue;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #info {
+        background-color: $Very-Dark-Desaturated-Blue;
+        color: $Dark-Grayish-Blue;
+
+        p {
+          padding: 5px 13px;
+          font-size: 13px;
+          color: $Dark-Grayish-Blue;
+
+          &:hover {
+            color: rgba(133, 133, 233, 0.799);
+            cursor: pointer;
+          }
+
+          span {
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

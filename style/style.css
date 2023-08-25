@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;400;500;700&display=swap");
+header nav ul div, header nav ul, header nav {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background-color: hsl(0, 0%, 98%);
+  font-weight: 200;
+  padding: 25px 15px;
+}
+header nav {
+  justify-content: space-between;
+  padding: 5px 30px;
+}
+header nav a.app-name {
+  font-weight: 400;
+  font-size: 38px;
+  color: hsl(235, 21%, 11%);
+  background: -webkit-linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header nav ul {
+  list-style: none;
+  margin-right: 15px;
+}
+header nav ul li {
+  align-self: center;
+}
+header nav ul li a {
+  margin-right: 15px;
+  font-weight: 300;
+  font-size: 16px;
+  color: hsl(235, 19%, 35%);
+}
+header nav ul li a:hover {
+  color: hsl(220, 98%, 61%);
+}
+header nav ul div {
+  position: relative;
+  background-color: hsl(225, 6%, 86%);
+  border-radius: 50px;
+  gap: 25px;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+header nav ul div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  background-color: rgba(248, 248, 152, 0.895);
+  border-radius: 50px;
+  transform: translateX(5px);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+header nav ul div svg {
+  z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+  header nav ul, header nav {
+    display: block;
+    text-align: center;
+  }
+  header {
+    padding: 15px 15px 0 15px;
+  }
+  header nav a {
+    width: 30px;
+  }
+  header nav ul {
+    margin: 20px 0;
+  }
+  header nav ul div {
+    width: fit-content;
+    margin: 10px auto;
+  }
+  header nav ul li {
+    margin-top: 10px;
+  }
+  header nav ul li a {
+    margin: 0;
+  }
+  header nav ul li a:hover {
+    color: hsl(220, 98%, 61%);
+  }
+}
+footer {
+  background-color: rgba(91, 134, 172, 0.77);
+  height: 170px;
+  color: rgba(255, 255, 255, 0.804);
+  text-align: center;
+}
+footer p {
+  padding: 25px 0 0 0;
+  font-size: 16px;
+}
+footer div {
+  font-size: 14px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+footer div a {
+  text-decoration: none;
+  color: rgb(112, 91, 158);
+}
+footer div a:hover {
+  color: rgb(242, 232, 138);
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    padding: 30px 10px 0 10px;
+    min-height: 220px;
+  }
+}
+body.dark-theme {
+  background-color: hsl(235, 21%, 11%);
+}
+body.dark-theme header {
+  background-color: hsl(235, 21%, 11%);
+}
+body.dark-theme header nav a.app-name {
+  background: none;
+  -webkit-text-fill-color: white;
+}
+body.dark-theme header div {
+  background-color: hsl(237, 14%, 26%);
+}
+body.dark-theme header div::before {
+  background-color: rgb(131, 131, 255);
+  transform: translateX(54px);
+}
+body.dark-theme header a {
+  color: white;
+}
+body.dark-theme #hero {
+  background: linear-gradient(rgba(40, 39, 39, 0.211), rgba(41, 40, 40, 0.156)), url(/images/heroimg.jpg);
+}
+body.dark-theme .section i {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  opacity: 0.76;
+}
+body.dark-theme .section p {
+  color: white;
+  opacity: 0.8;
+}
+body.dark-theme footer {
+  background-color: hsl(235, 24%, 19%);
+}
+
+body {
+  height: 100vh;
+}
+body.light-theme {
+  background-color: hsl(0, 0%, 98%);
+}
+body.light-theme .section p {
+  color: hsl(235, 19%, 35%);
+}
+body.light-theme .section i {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  color: white;
+}
+body #hero {
+  height: 550px;
+  background-image: url(/images/heroimg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+body #hero h3, body #hero h1 {
+  position: relative;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+body #hero h1 {
+  top: 200px;
+  font-size: 50px;
+}
+body #hero h3 {
+  top: 250px;
+  font-size: 30px;
+}
+body .section {
+  height: fit-content;
+  display: block;
+  text-align: center;
+}
+body .section p {
+  min-height: 80px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: hsl(235, 19%, 35%);
+  font-size: 20px;
+}
+body .section i {
+  display: block;
+  padding-top: 10px;
+  font-size: 30px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  color: white;
+  margin: 20px auto 20px auto;
+}
+
+@media (min-width: 500px) {
+  div.section {
+    display: flex;
+    align-items: center;
+  }
+  #hero {
+    margin-bottom: 25px;
+  }
+  div.section {
+    height: 300px;
+    justify-content: space-around;
+  }
+}
+body.dark-theme #todo-list #body-item-1 {
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-row: 1/2;
+  width: 100%;
+}
+body.dark-theme #todo-list #body-item-2 {
+  width: 100%;
+  grid-row: 2/3;
+  background-color: hsl(235, 21%, 11%);
+}
+body.dark-theme #todo-list #content input {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+  border: none;
+}
+body.dark-theme #todo-list #content #add {
+  background-color: hsl(237, 14%, 26%);
+  font-size: 25px;
+  color: rgb(212, 195, 195);
+}
+body.dark-theme #todo-list #content #add:hover {
+  background-color: rgba(42, 40, 40, 0.655);
+  cursor: pointer;
+}
+body.dark-theme #todo-list #content .check-box + label::after {
+  background: hsl(235, 24%, 19%);
+  border: 1px solid hsl(234, 11%, 52%);
+}
+body.dark-theme #todo-list #content .list .task {
+  background-color: hsl(235, 24%, 19%);
+  border-top: 2px solid hsl(237, 14%, 26%);
+}
+body.dark-theme #todo-list #content .list .task div span {
+  color: hsl(234, 39%, 85%);
+}
+body.dark-theme #todo-list #content .list .task div .checked {
+  text-decoration: line-through;
+  color: hsl(234, 11%, 52%);
+}
+body.dark-theme #todo-list #content .list .task div .list-checkbox + label::after {
+  background: hsl(235, 24%, 19%);
+  border: 1px solid hsl(234, 11%, 52%);
+}
+body.dark-theme #todo-list #content #info {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 11%, 52%);
+}
+body.dark-theme #todo-list #content #info p {
+  padding: 5px 13px;
+  font-size: 13px;
+  color: hsl(234, 11%, 52%);
+}
+body.dark-theme #todo-list #content #info p:hover {
+  color: rgba(133, 133, 233, 0.799);
+  cursor: pointer;
+}
+body.dark-theme #todo-list #content #info p span {
+  padding-right: 5px;
+}
+
+body {
+  height: fit-content;
+}
+body #todo-list {
+  position: relative;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 200px 400px;
+}
+body #todo-list #body-item-1 {
+  background-image: url(../images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-row: 1/2;
+  width: 100%;
+}
+body #todo-list #body-item-2 {
+  width: 100%;
+  grid-row: 2/3;
+  background-color: hsl(236, 33%, 92%);
+}
+body #todo-list #content {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-height: 550px;
+}
+body #todo-list #content #add {
+  position: relative;
+  left: 446.5px;
+  top: -79px;
+  height: 54px;
+  width: 54px;
+  border-radius: 7px;
+  background-color: rgba(225, 222, 222, 0.896);
+  border: none;
+  font-size: 25px;
+}
+body #todo-list #content input {
+  position: relative;
+  top: -24px;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  height: 55px;
+  outline: none;
+  padding-left: 45px;
+  border: none;
+  overflow: hidden;
+  border-radius: 7px;
+  cursor: pointer;
+}
+body #todo-list #content .list {
+  margin-bottom: 20px;
+}
+body #todo-list #content .list .task {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  border-top: 2px solid hsl(236, 33%, 92%);
+  cursor: pointer;
+}
+body #todo-list #content .list .task .x {
+  font-size: 20px;
+  padding: 15px 10px;
+}
+body #todo-list #content .list .task div {
+  height: 100%;
+  width: 100%;
+}
+body #todo-list #content .list .task div span {
+  position: relative;
+  bottom: 63px;
+  color: hsl(235, 19%, 35%);
+  height: 100%;
+  width: 100%;
+  margin-left: 50px;
+}
+body #todo-list #content .list .task div .checked {
+  text-decoration: line-through;
+  color: hsl(234, 39%, 85%);
+}
+body #todo-list #content .list .task div .list-checkbox {
+  position: relative;
+  top: -5px;
+  z-index: 3;
+  opacity: 0;
+}
+body #todo-list #content .list .task div .list-checkbox:checked + label::after {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+body #todo-list #content .list .task div .list-checkbox + label {
+  width: 30px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  height: 20px;
+  line-height: 1.7em;
+}
+body #todo-list #content .list .task div .list-checkbox + label::after {
+  z-index: 2;
+  bottom: 43px;
+  left: 12.5px;
+  width: 22px;
+  height: 22px;
+  display: block;
+  content: "";
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid hsl(234, 11%, 52%);
+}
+body #todo-list #info {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 50px;
+  border-radius: 7px;
+  background-color: white;
+}
+body #todo-list #info p {
+  padding: 5px 13px;
+  font-size: 13px;
+  color: hsl(234, 11%, 52%);
+}
+body #todo-list #info p:hover {
+  color: rgba(133, 133, 233, 0.799);
+  cursor: pointer;
+}
+body #todo-list #info p span {
+  padding-right: 5px;
+}
+
+@media (min-width: 500px) {
+  #content {
+    max-width: 500px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(0, 0%, 98%);
+}
+body header {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,23 @@
+@import 'config';
+@import 'header';
+@import 'footer';
+@import 'hero';
+@import 'todo';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    transition: $transiton-theme;
+    font-family: $font-family;
+    background-color: $page-bg;
+
+    header {
+        transition: $transiton-theme;
+    }
+
+}

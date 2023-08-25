@@ -49,6 +49,7 @@ function createListObject() {
 
   toDoItemsArray.push(todo);
   console.log(toDoItemsArray);
+
   addTodoHtml();
 }
 
@@ -62,7 +63,7 @@ function addTodoHtml() {
                             }>
                             <label></label>
                             <span class="taskname ${
-                              !item.checked ? "" : "checked"
+                              item.checked ? "" : "checked"
                             }">
                                ${item.description}
                             </span>
@@ -80,7 +81,17 @@ function addTodoHtml() {
 
 listContainer.addEventListener("click", (event) => {
   let id = Number(event.target.parentNode.parentNode.getAttribute("id"));
-  console.log(id);
+  // console.log(id);
+
+  toDoItemsArray.find((el) => {
+    if (el.id === id) {
+      el.checked = true;
+    } else {
+      el.checked = false;
+    }
+
+    console.log(el.checked, el.id);
+  });
 
   // console.log(event.target.parentNode.parentNode);
 });

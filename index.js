@@ -48,9 +48,16 @@ function createListObject() {
   };
 
   toDoItemsArray.push(todo);
-  console.log(toDoItemsArray);
-
+  // console.log(toDoItemsArray);
   addTodoHtml();
+
+  const deleteButtons = document.querySelectorAll(".x");
+
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  });
 }
 
 function addTodoHtml() {
@@ -62,7 +69,7 @@ function addTodoHtml() {
                               !item.checked ? "" : "checked"
                             }>
                             <label></label>
-                            <span class="taskname ${
+                            <span class="taskname" ${
                               !item.checked ? "" : "checked"
                             }">
                                ${item.description}
@@ -82,13 +89,14 @@ function addTodoHtml() {
 
 listContainer.addEventListener("click", (event) => {
   let listId = Number(event.target.parentNode.parentNode.getAttribute("id"));
-  let a = document.getElementById(listId);
-  let checkedText = a.querySelector("span");
+  let spanTxt = document.getElementById(listId);
+  let checkedText = spanTxt.querySelector(".taskname");
+  //using stopPropagation() to stop bubbling of an event through the DOM
 
   if (checkedText.classList.contains("checked")) {
     checkedText.classList.remove("checked");
   } else {
     checkedText.classList.add("checked");
   }
-  console.log(checkedText);
+  // console.log(checkedText);
 });

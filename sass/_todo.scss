@@ -63,13 +63,12 @@ body {
         .task {
           display: flex;
           justify-content: space-between;
-
           width: 100%;
           background-color: $white-clr;
           border-top: 2px solid $Very-Light-Grayish-Blue;
           cursor: pointer;
 
-          .x {
+          span.x {
             font-size: 20px;
             padding: 15px 10px;
           }
@@ -78,7 +77,7 @@ body {
             height: 100%;
             width: 100%;
 
-            span {
+            span.taskname {
               position: relative;
               bottom: 63px;
               color: $Very-Dark-Grayish-Blue-l;

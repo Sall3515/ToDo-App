@@ -6,32 +6,6 @@ const listContainer = document.querySelector(".list");
 const checkBox = document.querySelectorAll(".list-checkbox");
 const taskName = document.querySelectorAll(".taskname");
 
-//თემის ცვლილება
-const switcher = document.getElementById("switcher");
-const body = document.querySelector("body");
-const KEY_WORD = "theme"; //კონფიგურაციის ცვლადი
-
-switcher.addEventListener("click", () => {
-  const currentTheme = localStorage.getItem(KEY_WORD);
-  if (currentTheme === "dark-theme") {
-    setTheme("light-theme");
-  } else {
-    setTheme("dark-theme");
-  }
-});
-function setTheme(className) {
-  body.setAttribute("class", className);
-  localStorage.setItem(KEY_WORD, className);
-}
-function changeTheme() {
-  const theme = localStorage.getItem(KEY_WORD);
-  console.log(theme);
-  if (theme) {
-    setTheme(theme);
-  }
-}
-changeTheme();
-
 //todo app
 
 let toDoItemsArray = [];
@@ -50,21 +24,13 @@ function createListObject() {
   toDoItemsArray.push(todo);
   // console.log(toDoItemsArray);
   addTodoHtml();
-
-  const deleteButtons = document.querySelectorAll(".x");
-
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-  });
 }
 
 function addTodoHtml() {
   let newEl = document.createElement("div");
   toDoItemsArray.forEach((item) => {
     newEl.innerHTML = `<div  class="task" id="${item.id}" >
-                          <div >
+                          <div  class="text task-text">
                             <input class="list-checkbox" type="checkbox"  ${
                               !item.checked ? "" : "checked"
                             }>
@@ -75,7 +41,7 @@ function addTodoHtml() {
                                ${item.description}
                             </span>
                           </div>
-                           <span class="x">
+                           <span class="x" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                               <path fill="#494C6B" fill-rule="evenodd"
                                d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/>
@@ -85,18 +51,24 @@ function addTodoHtml() {
   });
 
   listContainer.appendChild(newEl);
+
+  const taskTexts = Array.from(listContainer.querySelectorAll(".task-text"));
+
+  taskTexts.map((taskText) => {
+    taskText.addEventListener("click", (event) => {
+      let listId = Number(
+        event.target.parentNode.parentNode.getAttribute("id")
+      );
+      let spanTxt = document.getElementById(listId);
+      // console.log(spanTxt);
+
+      let checkedText = spanTxt.querySelector(".taskname");
+
+      if (checkedText.classList.contains("checked")) {
+        checkedText.classList.remove("checked");
+      } else {
+        checkedText.classList.add("checked");
+      }
+    });
+  });
 }
-
-listContainer.addEventListener("click", (event) => {
-  let listId = Number(event.target.parentNode.parentNode.getAttribute("id"));
-  let spanTxt = document.getElementById(listId);
-  let checkedText = spanTxt.querySelector(".taskname");
-  //using stopPropagation() to stop bubbling of an event through the DOM
-
-  if (checkedText.classList.contains("checked")) {
-    checkedText.classList.remove("checked");
-  } else {
-    checkedText.classList.add("checked");
-  }
-  // console.log(checkedText);
-});

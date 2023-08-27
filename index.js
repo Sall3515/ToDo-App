@@ -12,6 +12,12 @@ let toDoItemsArray = [];
 
 addTodoItems.addEventListener("click", createListObject);
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    createListObject();
+  }
+});
+
 function createListObject() {
   const inputTextValue = inputText.value;
 

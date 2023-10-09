@@ -1,95 +1,93 @@
-@import 'hero-dark';
-
+@import "hero-dark";
 
 body {
-    height: 100vh;
+  height: 100vh;
 
-    &.light-theme {
-        background-color: $page-bg;
-
-        .section {
-            p {
-                color: $text-clr;
-            }
-
-            i {
-                background-image: $gradient;
-                color: white;
-            }
-        }
-    }
-
-    #hero {
-        height: 550px;
-        background-image: url(/images/heroimg.jpg);
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: center;
-
-        %text {
-            position: relative;
-            font-family: $font-family;
-            color: $white-clr;
-        }
-
-        h1 {
-            top: 200px;
-            font-size: 50px;
-            @extend %text;
-        }
-
-        h3 {
-            @extend %text;
-            top: 250px;
-            font-size: 30px;
-        }
-    }
+  &.light-theme {
+    background-color: $page-bg;
 
     .section {
-        height: fit-content;
-        display: block;
-        text-align: center;
+      p {
+        color: $text-clr;
+      }
 
-        p {
-            min-height: 80px;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            color: $text-clr;
-            font-size: 20px;
-        }
+      i {
+        background-image: $gradient;
+        color: white;
+      }
+    }
+  }
 
-        i {
-            display: block;
-            padding-top: 10px;
-            font-size: 30px;
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            background-image: $gradient;
-            color: white;
-            margin: 20px auto 20px auto;
-        }
+  #hero {
+    height: 550px;
+    background-image: url(/images/heroimg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+
+    %text {
+      position: relative;
+      font-family: $font-family;
+      color: $white-clr;
     }
 
+    h1 {
+      top: 200px;
+      font-size: 50px;
+      @extend %text;
+    }
+
+    h3 {
+      @extend %text;
+      top: 250px;
+      font-size: 30px;
+    }
+  }
+
+  .section {
+    height: fit-content;
+    display: block;
+    text-align: center;
+
+    p {
+      min-height: 80px;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      color: $text-clr;
+      font-size: 20px;
+    }
+
+    i {
+      display: block;
+      padding-top: 10px;
+      font-size: 30px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-image: $gradient;
+      color: white;
+      margin: 20px auto 20px auto;
+    }
+  }
 }
 
-@media(min-width:500px) {
-    %displays {
-        display: flex;
-        align-items: center;
-    }
+@media (min-width: 500px) {
+  %displays {
+    display: flex;
+    align-items: center;
+  }
 
-    #hero {
-        margin: {
-            bottom: 25px;
-        }
+  #hero {
+    margin: {
+      bottom: 25px;
     }
+  }
 
-    div.section {
-        @extend %displays;
-        height: 300px;
-        justify-content: space-around;
-    }
+  div.section {
+    @extend %displays;
+    height: 300px;
+    justify-content: space-around;
+  }
 }

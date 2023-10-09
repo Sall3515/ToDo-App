@@ -42,12 +42,12 @@
     <div id="body-item-1"></div>
     <div id="body-item-2"></div>
     <div id="content">
-
-      <label for="terms_and_conditions"></label>
       <input class="text" type="text" placeholder="Add new task">
       <button id="add" type="button">+</button>
 
-      <div class="list"></div>
+      <div class="list" id="tasks">
+
+      </div>
       <div id="info">
         <p class="save-all">Save</p>
       </div>
@@ -66,7 +66,35 @@
 
 
   <script src="./theme.js"></script>
-  <script src="./index.js"></script>
+
+  <script src="./setup.js"></script>
+  <script src="./data.js"></script>
+  <script>
+    setup(tasks, "tasks");
+
+    let addTask = document.getElementById("add");
+    let addTaskInput = document.querySelector(".text");
+
+    addTask.addEventListener("click", (event) => {
+      event.preventDefault();
+      tasks.unshift({
+        description: addTaskInput.value,
+        id: Date.now(),
+        active: true,
+      });
+
+      setup(tasks, "tasks");
+    });
+
+    const taskListElement = document.getElementById("tasks");
+
+    taskListElement.addEventListener("click", (event) => {
+      let id = Number(event.target.parentNode.parentNode.getAttribute("data-id"));
+      console.log(id);
+      tasks[id].active = false;
+    });
+  </script>
+
 </body>
 
 </html>

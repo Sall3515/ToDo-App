@@ -1,134 +1,137 @@
 %display {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @mixin rtl($ltr-value, $side, $index) {
-    position: $ltr-value;
-    #{$side}: 0;
-    z-index: $index;
+  position: $ltr-value;
+  #{$side}: 0;
+  z-index: $index;
 }
 
 @mixin fontstyle($font-weight, $font-size) {
-    font-weight: $font-weight;
-    font-size: $font-size;
+  font-weight: $font-weight;
+  font-size: $font-size;
 }
 
 header {
-    @include rtl(sticky, top, 4);
-    background-color: $Very-Light-Gray;
-    font-weight: 200;
-    padding: 25px 15px;
+  @include rtl(sticky, top, 4);
+  background-color: $Very-Light-Gray;
+  font-weight: 200;
+  padding: 25px 15px;
 
-    nav {
-        @extend %display;
-        justify-content: space-between;
-        padding: 5px 30px;
+  nav {
+    @extend %display;
+    justify-content: space-between;
+    padding: 5px 30px;
 
-        a.app-name {
-            @include fontstyle(400, 38px);
-            color: $Very-Dark-Blue;
-            background: -webkit-linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-            -webkit-background-clip: text; // ? ? ?
-            -webkit-text-fill-color: transparent;
-        }
-
-        ul {
-            @extend %display;
-            list-style: none;
-
-            margin: {
-                right: 15px;
-            }
-
-            li {
-                align-self: center;
-
-                a {
-                    margin: {
-                        right: 15px;
-                    }
-
-                    @include fontstyle(300, 16px);
-                    color: $text-clr;
-
-                    &:hover {
-                        color: $bright-blue;
-                    }
-                }
-            }
-
-            div {
-                @extend %display;
-                position: relative;
-                background-color: $switch-bg;
-                border-radius: 50px;
-                gap: 25px;
-                padding: 0.55rem;
-                cursor: pointer;
-
-                &::before {
-                    content: '';
-                    @include rtl(absolute, left, 0);
-                    width: 2.1rem;
-                    height: 2.1rem;
-                    background-color: $switcher-circle-clr;
-                    border-radius: 50px;
-                    transform: translateX($switch-circle-positon);
-                    transition: $transiton-theme;
-                }
-
-                & {
-                    svg {
-                        z-index: 1;
-                    }
-                }
-            }
-
-        }
-
+    a.app-name {
+      @include fontstyle(400, 38px);
+      color: $Very-Dark-Blue;
+      background: -webkit-linear-gradient(
+        hsl(192, 100%, 67%),
+        hsl(280, 87%, 65%)
+      );
+      -webkit-background-clip: text; // ? ? ?
+      -webkit-text-fill-color: transparent;
     }
+
+    ul {
+      @extend %display;
+      list-style: none;
+
+      margin: {
+        right: 15px;
+      }
+
+      li {
+        align-self: center;
+
+        a {
+          margin: {
+            right: 15px;
+          }
+
+          @include fontstyle(300, 16px);
+          color: $text-clr;
+
+          &:hover {
+            color: $bright-blue;
+          }
+        }
+      }
+
+      div {
+        @extend %display;
+        position: relative;
+        background-color: $switch-bg;
+        border-radius: 50px;
+        gap: 25px;
+        padding: 0.55rem;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          @include rtl(absolute, left, 0);
+          width: 2.1rem;
+          height: 2.1rem;
+          background-color: $switcher-circle-clr;
+          border-radius: 50px;
+          transform: translateX($switch-circle-positon);
+          transition: $transiton-theme;
+        }
+
+        & {
+          svg {
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
-    %centeredtxt {
-        display: block;
-        text-align: center;
-    }
+  %centeredtxt {
+    display: block;
+    text-align: center;
+  }
 
-    header {
-        padding: 15px 15px 0 15px;
+  header {
+    padding: 15px 15px 0 15px;
 
-        nav {
-            @extend %centeredtxt;
+    nav {
+      @extend %centeredtxt;
 
-            a {
-                width: 30px;
-            }
+      a {
+        width: 30px;
+      }
 
-            ul {
-                @extend %centeredtxt;
-                margin: 20px 0;
+      ul {
+        @extend %centeredtxt;
+        margin: 20px 0;
 
-                div {
-                    width: fit-content;
-                    margin: 10px auto;
-                }
-
-                li {
-                    margin: {
-                        top: 10px;
-                    }
-
-                    a {
-                        margin: 0;
-
-                        &:hover {
-                            color: $bright-blue;
-                        }
-                    }
-                }
-            }
+        div {
+          width: fit-content;
+          margin: 10px auto;
         }
+
+        li {
+          margin: {
+            top: 10px;
+            right: 10px;
+          }
+
+          a {
+            margin: 0;
+            font-size: 15px;
+
+            &:hover {
+              color: $bright-blue;
+            }
+          }
+        }
+      }
     }
+  }
 }

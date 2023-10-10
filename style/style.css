@@ -84,9 +84,11 @@ header nav ul div svg {
   }
   header nav ul li {
     margin-top: 10px;
+    margin-right: 10px;
   }
   header nav ul li a {
     margin: 0;
+    font-size: 15px;
   }
   header nav ul li a:hover {
     color: hsl(220, 98%, 61%);
@@ -309,23 +311,24 @@ body #todo-list #body-item-2 {
   background-color: hsl(236, 33%, 92%);
 }
 body #todo-list #content {
-  position: absolute;
-  top: 66%;
+  position: relative;
+  top: -31%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 500px;
   min-height: 550px;
 }
 body #todo-list #content #add {
-  position: relative;
-  left: 446.5px;
-  top: -79px;
-  height: 54px;
-  width: 54px;
+  position: absolute;
+  top: -24px;
+  right: 0;
+  height: 54.5px;
+  width: 55px;
   border-radius: 7px;
-  background-color: rgba(225, 222, 222, 0.896);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
-  font-size: 25px;
+  font-size: 38px;
+  overflow: hidden;
   color: rgba(128, 128, 128, 0.864);
   transition: 0.2s;
 }
@@ -428,9 +431,15 @@ body #todo-list #info p:hover {
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 650px) {
   #content {
-    max-width: 500px;
+    max-width: 80%;
+    position: relative;
+  }
+  #content button {
+    display: block;
+    position: absolute;
+    left: 87.1%;
   }
 }
 * {

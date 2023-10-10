@@ -42,7 +42,7 @@
     <div id="body-item-1"></div>
     <div id="body-item-2"></div>
     <div id="content">
-      <input class="text" type="text" placeholder="Add new task">
+      <input class="text" type="text" placeholder="Add new task" name="input-content">
       <button id="add" type="button">+</button>
 
       <div class="list" id="tasks">
@@ -66,7 +66,6 @@
 
 
   <script src="./theme.js"></script>
-
   <script src="./setup.js"></script>
   <script src="./data.js"></script>
   <script>
@@ -89,10 +88,21 @@
     const taskListElement = document.getElementById("tasks");
 
     taskListElement.addEventListener("click", (event) => {
+
       let id = Number(event.target.parentNode.parentNode.getAttribute("data-id"));
-      console.log(id);
-      tasks[id].active = false;
+
+      let task = tasks[id];
+
+      if (task.active) {
+        task.active = false;
+      } else {
+        task.active = true;
+      }
+      setup(tasks, "tasks");
+
     });
+
+
   </script>
 
 </body>

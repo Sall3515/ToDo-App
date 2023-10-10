@@ -45,13 +45,12 @@ body.dark-theme {
           border-top: 2px solid$Very-Dark-Grayish-Blue;
 
           div {
-            span {
+            span.taskname {
               color: $Light-Grayish-Blue;
-            }
-
-            .checked {
-              text-decoration: line-through;
-              color: $Dark-Grayish-Blue;
+              &.task-completed {
+                text-decoration: line-through;
+                color: $Dark-Grayish-Blue;
+              }
             }
 
             .list-checkbox {

@@ -262,10 +262,10 @@ body.dark-theme #todo-list #content .list .task {
   background-color: hsl(235, 24%, 19%);
   border-top: 2px solid hsl(237, 14%, 26%);
 }
-body.dark-theme #todo-list #content .list .task div span {
+body.dark-theme #todo-list #content .list .task div span.taskname {
   color: hsl(234, 39%, 85%);
 }
-body.dark-theme #todo-list #content .list .task div .checked {
+body.dark-theme #todo-list #content .list .task div span.taskname.task-completed {
   text-decoration: line-through;
   color: hsl(234, 11%, 52%);
 }
@@ -375,7 +375,7 @@ body #todo-list #content .list .task div span.taskname {
   width: 100%;
   margin-left: 50px;
 }
-body #todo-list #content .list .task div input[checked] {
+body #todo-list #content .list .task div span.taskname.task-completed {
   text-decoration: line-through;
   color: hsl(234, 39%, 85%);
 }

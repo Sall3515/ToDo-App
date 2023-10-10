@@ -75,14 +75,18 @@
 
     addTask.addEventListener("click", (event) => {
       event.preventDefault();
+
       tasks.unshift({
         description: addTaskInput.value,
         id: Date.now(),
         active: true,
       });
 
+      addTaskInput.value = "";
+
       setup(tasks, "tasks");
     });
+
 
 
   </script>

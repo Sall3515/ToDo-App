@@ -45,9 +45,7 @@
       <input class="text" type="text" placeholder="Add new task" name="input-content">
       <button id="add" type="button">+</button>
 
-      <div class="list" id="tasks">
-
-      </div>
+      <div class="list" id="tasks"> </div>
       <div id="info">
         <p class="save-all">Save</p>
       </div>
@@ -74,6 +72,7 @@
     let addTask = document.getElementById("add");
     let addTaskInput = document.querySelector(".text");
 
+
     addTask.addEventListener("click", (event) => {
       event.preventDefault();
       tasks.unshift({
@@ -83,23 +82,6 @@
       });
 
       setup(tasks, "tasks");
-    });
-
-    const taskListElement = document.getElementById("tasks");
-
-    taskListElement.addEventListener("click", (event) => {
-
-      let id = Number(event.target.parentNode.parentNode.getAttribute("data-id"));
-
-      let task = tasks[id];
-
-      if (task.active) {
-        task.active = false;
-      } else {
-        task.active = true;
-      }
-      setup(tasks, "tasks");
-
     });
 
 

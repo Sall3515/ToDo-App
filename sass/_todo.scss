@@ -1,30 +1,25 @@
 @import "todo-dark";
 
 body {
-  height: fit-content;
+  main {
+    background-color: $Light-Grayish-Blue;
+  }
   #todo-list {
     position: relative;
-    min-height: 100%;
+    min-height: 100vh;
     display: grid;
-    grid-template-rows: 200px 400px;
+    grid-template-rows: 250px;
 
     #body-item-1 {
       background-image: url(../images/bg-desktop-light.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-      grid-row: 1/2;
       width: 100%;
-    }
-
-    #body-item-2 {
-      width: 100%;
-      grid-row: 2/3;
-      background-color: $Very-Light-Grayish-Blue;
     }
 
     #content {
       position: relative;
-      top: -31%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 500px;
@@ -164,14 +159,62 @@ body {
 }
 
 @media (max-width: 650px) {
-  /// not finished
+  body {
+    min-height: 600px;
+
+    background-color: $Very-Light-Grayish-Blue;
+    #todo-list {
+      position: relative;
+      display: grid;
+      grid-template-rows: 250px;
+      grid-template-columns: auto;
+
+      #body-item-1 {
+        background-image: url(../images/bg-desktop-light.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-width: 280px;
+      }
+
+      #content {
+        position: relative;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        min-height: 550px;
+      }
+
+      #info {
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+        width: 100%;
+        height: 55px;
+        border-radius: 7px;
+        background-color: $white-clr;
+
+        p {
+          padding: 5px 13px;
+          font-size: 13px;
+          color: $Dark-Grayish-Blue;
+
+          &:hover {
+            color: rgba(133, 133, 233, 0.799);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
   #content {
-    max-width: 80%;
+    max-width: 70%;
     position: relative;
+
     button {
       display: block;
       position: absolute;
-      left: 87.1%;
     }
   }
 }

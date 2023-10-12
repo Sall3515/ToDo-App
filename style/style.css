@@ -318,7 +318,7 @@ body #todo-list #body-item-1 {
 }
 body #todo-list #content {
   position: relative;
-  top: 40%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;

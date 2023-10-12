@@ -5,4 +5,4 @@
 -Mark as not completed ✔
 -Delete a task ✔
 -Save tasks
--Responsive design
+-Responsive design ✔

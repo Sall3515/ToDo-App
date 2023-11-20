@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;400;500;700&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;400;500;700&display=swap");
 
 $mobile-size: 375px;
 $desktop-size: 1440px;
@@ -29,13 +27,12 @@ $Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
 
 $font-size: 18px;
 $font-weight: 400, 700;
-$font-family: 'Josefin Sans', sans-serif;
-
+$font-family: "Josefin Sans", sans-serif;
 
 $switch-circle-positon: 5px;
 $switcher-circle-clr: rgba(248, 248, 152, 0.895);
 $switcher-circle-clr-dark: rgb(131, 131, 255);
 $switch-bg: hsl(225, 6%, 86%);
 
-$transiton-theme: color .3s ease-in-out, background-color .3s ease-in-out,
-    fill .3s ease-in-out, transform .3s ease-in-out;
+$transiton-theme: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+  fill 0.3s ease-in-out, transform 0.3s ease-in-out;

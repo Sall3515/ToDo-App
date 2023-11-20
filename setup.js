@@ -46,3 +46,7 @@ const setup = (tasks, rootElementId) => {
     });
   });
 };
+
+let array = [12, 14, 1, 3, 19, 17, 45, 16, 19, 29, 31, 89, 86];
+let evenNum = array.filter((num) => num % 2 === 0);
+console.log(evenNum);

@@ -153,7 +153,7 @@ body.dark-theme header a {
   color: white;
 }
 body.dark-theme #hero {
-  background: linear-gradient(rgba(40, 39, 39, 0.211), rgba(41, 40, 40, 0.156)), url(/images/heroimg.jpg);
+  background: linear-gradient(rgba(40, 39, 39, 0.211), rgba(41, 40, 40, 0.156)), url(../images/heroimg.jpg);
 }
 body.dark-theme .section i {
   background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -182,7 +182,7 @@ body.light-theme .section i {
 }
 body #hero {
   height: 550px;
-  background-image: url(/images/heroimg.jpg);
+  background-image: url(../images/heroimg.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
